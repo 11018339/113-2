@@ -41,3 +41,15 @@ Planet 和 Figure Eight 慷慨地提供了卫星图像的带注释数据集，�
 **获取竞赛数据**
 
 为了尽可能简洁明了，Abdishakur 上传竞赛数据文件至 dropbox.com。你可以在竞赛页面上找到这些数据。你需要接受竞赛规则，并在参赛后访问数据。
+
+![image](https://github.com/11018339/113-2/blob/main/images/3.png)
+
+**观察数据**
+
+我们在解决一个问题时首先要做的是观察可用数据。在想出解决方案之前，我们需要理解这个问题以及数据是什么样的。观察数据意味着理解数据目录的构成方式、数据标签以及样本图像是什么样的。
+
+![image](https://github.com/11018339/113-2/blob/main/images/4.png)
+
+使用 pandas 库来读取数据。
+
+![image](https://github.com/11018339/113-2/blob/main/images/5.png)
