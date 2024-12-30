@@ -281,3 +281,69 @@ max_warp：如果超参不为 None，那么以 p_affine 为概率在-max_warp �
 准确率、误差率和 AUC 分数
 
 ![image](https://github.com/11018339/113-2/blob/main/images/40.png)
+
+第三个训练阶段的指标
+
+**最终训练阶段**
+
+你可能注意到了，我们刚开始使用的图像大小为 164，然后逐渐增加到 256（如下所示）。这么做是为了利用 fast.ai 用于分类的渐进式图像大小缩放，即在一开始使用小图像，之后随着训练逐渐增加图像大小。如此一来，当模型早期非常不准确时，它能迅速看到大量图像并实现快速改进，而在后期训练中，它可以看到更大的图像，学到更多细粒度的差别。（详情请参见：现在，所有人都可以在 18 分钟内训练 ImageNet 了）
+
+![image](https://github.com/11018339/113-2/blob/main/images/41.png)
+
+应用不同的变换来改进模型，将图像大小增加到 256
+
+我们又发现了一个最佳学习率。
+
+![image](https://github.com/11018339/113-2/blob/main/images/42.png)
+
+找到理想学习率
+
+![image](https://github.com/11018339/113-2/blob/main/images/43.png)
+
+找到理想的学习率
+
+以 1e-4 的学习率训练 5 个 epoch 以拟合模型。
+
+![image](https://github.com/11018339/113-2/blob/main/images/44.png)
+
+以 1e-4 的学习率对模型训练 5 个周期
+
+![image](https://github.com/11018339/113-2/blob/main/images/45.png)
+
+训练和验证损失
+
+观察训练指标并与之前的指标对比。我们的模型有了小小的提升（损失从 0.169 降到了 0.168）。
+
+![image](https://github.com/11018339/113-2/blob/main/images/46.png)
+
+模型训练阶段的输出。在第 2 个 epoch 时得到最佳模型
+
+保存模型最后的训练阶段并打印出指标。
+
+![image](https://github.com/11018339/113-2/blob/main/images/47.png)
+
+![image](https://github.com/11018339/113-2/blob/main/images/48.png)
+
+准确率、误差率和 AUC 分数
+
+如下所示，模型的准确率为 99.44%，优于上一个训练阶段 99.38% 的准确率。
+
+![image](https://github.com/11018339/113-2/blob/main/images/49.png)
+
+第四个训练阶段的指标
+
+准备一个竞赛提交文件
+
+现在可以看到我们的模型对未见过的数据做出了多么好的预测。
+
+![image](https://github.com/11018339/113-2/blob/main/images/50.png)
+
+准备一个 CSV 提交文件
+
+**将文件提交给 WiDS Datathon**
+
+你仍然可以参加 WiDS 竞赛并晚一点提交。进入参赛页面，点击「Join Competition」，了解比赛规则。现在你可以提交作品，看看自己会排到第几。
+
+根据模型预测对提交的作品进行打分
+
+原文链接：[https://towardsdatascience.com/how-a-team-of-deep-learning-newbies-came-3rd-place-in-a-kaggle-contest-644adcc143c8](https://towardsdatascience.com/how-a-team-of-deep-learning-newbies-came-3rd-place-in-a-kaggle-contest-644adcc143c8)
