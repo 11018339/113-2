@@ -109,3 +109,59 @@ Planet 和 Figure Eight 慷慨地提供了卫星图像的带注释数据集，�
 **训练我们的模型**
 
 现在，开始训练我们的模型。我们将使用卷积神经网络作为主体，并利用 ResNet 模型的预训练权重。ResNet 模型被训练用来对各种图像进行分类，不用担心它的理论和实现细节。现在，我们构建的模型以卫星图像作为输入，并输出这两个类别的预测概率。
+
+![image](https://github.com/11018339/113-2/blob/main/images/12.png)
+
+卷积神经网络
+
+![image](https://github.com/11018339/113-2/blob/main/images/13.png)
+
+搜索最佳模型学习率。
+
+接下来，我们用 lr_find() 函数找到了理想的学习率，并使用 recorder.plot() 对其进行了可视化。
+
+![image](https://github.com/11018339/113-2/blob/main/images/14.png)
+
+搜索最佳模型学习率。
+
+我们将选择斜率最大的学习率，在这里我们选择的是 1e-2。
+
+![image](https://github.com/11018339/113-2/blob/main/images/15.png)
+
+用学习率 1e-2 对模型展开 5 个周期的训练。
+
+我们将使用 fit_one_cycle 函数对模型进行 5 个 epoch 的训练（遍历所有数据 5 次）。
+
+![image](https://github.com/11018339/113-2/blob/main/images/16.png)
+
+训练和验证损失。
+
+注意展示的 metrics，即 training_loss 和 valid_loss。随着时间的推移，我们使用它们来监控模型的改进。
+
+最佳模型是在第四个 epoch 时获得的。
+
+![image](https://github.com/11018339/113-2/blob/main/images/17.png)
+
+训练阶段模型的输出；训练和验证损失的变化过程。
+
+在你进行训练和验证数据集时，fast.ai 只在内部挑选并保存你的最佳模型。
+
+**评估我们的模型**
+
+竞赛提交的材料是根据预测概率和观测目标 has_oilpalm 之间的 ROC 曲线来评估的。默认情况下，Fast.ai 不会附带这个指标，所以我们将使用 scikit-learn 库。
+
+![image](https://github.com/11018339/113-2/blob/main/images/18.png)
+
+打印验证指标。
+
+使用预训练模型和 fast.ai 的妙处在于，你可以获得很好的预测准确率。在我们的案例中，没有费多大力就获得了 99.44% 的准确率。
+
+![image](https://github.com/11018339/113-2/blob/main/images/19.png)
+
+训练第一阶段的指标。
+
+保存模型，并绘制关于预测的混淆矩阵。
+
+![image](https://github.com/11018339/113-2/blob/main/images/20.png)
+
+**使用混淆矩阵查看结果**
