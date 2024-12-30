@@ -215,3 +215,69 @@ Planet 和 Figure Eight 慷慨地提供了卫星图像的带注释数据集，�
 打印模型的准确率、误差率和 AUC 指标：
 
 ![image](https://github.com/11018339/113-2/blob/main/images/30.png)
+
+第二个训练阶段的指标。
+
+如你所见，模型的准确率从 99.44% 上升到了 99.48%。误差率从 0.0056 降到了 0.0052。AUC 也从 99.82% 上升为 99.87%。
+
+![image](https://github.com/11018339/113-2/blob/main/images/31.png)
+
+绘制混淆矩阵。
+
+与我们绘制的上一个混淆矩阵相比，你会发现模型的预测效果更好了。
+
+![image](https://github.com/11018339/113-2/blob/main/images/32.png)
+
+第二个训练阶段的混淆指标
+
+之前有 7 张不含油棕种植园的图像被错误分类，现在降到了 3 张，这就是进步。
+
+我们在训练和调参期间遵循了一种模式。大多数深度学习实验都遵循类似的迭代模式。
+
+**图像转换**
+
+我们将在数据上执行更多的图像转换，这应该是能提升模型效果的。图像转换的具体描述可以在 fast.ai 文档中找到：
+
+![image](https://github.com/11018339/113-2/blob/main/images/33.png)
+
+应用不同的转换以提升模型效果
+
+max_lighting：如果超参不为 None，那么以 p_lighting 为概率随机进行亮度、对比度的调整，且最大亮度不超过 max_lighting。
+
+max_zoom：如果超参不小于 1，那么以 p_affine 为概率随机放大 1 到 max_zoom 倍。
+
+max_warp：如果超参不为 None，那么以 p_affine 为概率在-max_warp 和 max_warp 之间随机对称变换。
+
+我们再一次搜索最优学习率：
+
+![image](https://github.com/11018339/113-2/blob/main/images/34.png)
+
+搜索一个合理的学习率
+
+![image](https://github.com/11018339/113-2/blob/main/images/35.png)
+
+我们选择的学习率是 1e-6
+
+将模型训练 5 个周期。
+
+![image](https://github.com/11018339/113-2/blob/main/images/36.png)
+
+训练 5 个周期
+
+![image](https://github.com/11018339/113-2/blob/main/images/37.png)
+
+训练和验证损失
+
+比较训练指标，并与过去的指标进行比较。我们的模型在这次迭代中略逊于 0.0169 和 0.0163。先不要泄气。
+
+![image](https://github.com/11018339/113-2/blob/main/images/38.png)
+
+训练阶段模型的输出；在第 3 个 epoch 时得到最佳模型
+
+保存模型训练的第三个阶段并打印出指标。如图所示，当前模型的准确率为 99.38，上一个阶段的准确率为 99.48%。AUC 分数从 99.87% 提高到了 99.91%，这是比赛评分的标准。
+
+![image](https://github.com/11018339/113-2/blob/main/images/39.png)
+
+准确率、误差率和 AUC 分数
+
+![image](https://github.com/11018339/113-2/blob/main/images/40.png)
