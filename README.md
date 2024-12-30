@@ -32,4 +32,4 @@ Planet 和 Figure Eight 慷慨地提供了卫星图像的带注释数据集，�
 
 导入 fast.ai 和我们将要使用的其他库
 
-![image][(https://github.com/11018339/google-colab/blob/main/images/1.jpg?raw=true)](https://github.com/11018339/113-2/blob/main/images/1.png)
+![image](https://github.com/11018339/113-2/blob/main/images/1.png)
