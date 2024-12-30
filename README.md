@@ -22,7 +22,7 @@ Planet 和 Figure Eight 慷慨地提供了卫星图像的带注释数据集，�
 
 课程地址：[https://course.fast.ai/](https://course.fast.ai/)<br>
 
-从一个通俗易懂的深度学习指南开始
+**从一个通俗易懂的深度学习指南开始**
 
 不要想着马上就能理解所有东西，这需要大量的练习。本指南旨在向深度学习初学者展示 fast.ai 的魅力。假定你了解一些 python 知识，也对机器学习稍有涉猎。这样的话，我们就走上了学习正轨。
 
@@ -30,6 +30,14 @@ Planet 和 Figure Eight 慷慨地提供了卫星图像的带注释数据集，�
 
 代码参见：[https://colab.research.google.com/drive/1PVaRPY1XZuPLtm01V2XxIWqhLrz3_rgX](https://colab.research.google.com/drive/1PVaRPY1XZuPLtm01V2XxIWqhLrz3_rgX)。<br>
 
-导入 fast.ai 和我们将要使用的其他库
+**导入 fast.ai 和我们将要使用的其他库**
 
 ![image](https://github.com/11018339/113-2/blob/main/images/1.png)
+
+![image](https://github.com/11018339/113-2/blob/main/images/2.png)
+
+输入库
+
+**获取竞赛数据**
+
+为了尽可能简洁明了，Abdishakur 上传竞赛数据文件至 dropbox.com。你可以在竞赛页面上找到这些数据。你需要接受竞赛规则，并在参赛后访问数据。
